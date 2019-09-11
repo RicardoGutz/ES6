@@ -1,13 +1,24 @@
-const arr = [1, 3, 4, 5, 8];
+const usuario = {
+  nome: "Ricardo",
+  idade: 19,
+  endereco: {
+    cidade: "Blumenau",
+    estado: "SC"
+  }
+};
 
-const newArr2 = arr.map(function(item) {
-  return item * 2;
-});
+const {
+  nome,
+  idade,
+  endereco: { cidade }
+} = usuario;
 
-const newArr = arr.map(item => item * 2);
+console.log(nome);
+console.log(idade);
+console.log(cidade);
 
-console.log(newArr);
+function mostraNome({ nome, idade }) {
+  console.log(nome, idade);
+}
 
-const teste = () => ({ nome: "Diego" });
-
-console.log(teste());
+mostraNome(usuario);

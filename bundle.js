@@ -1,18 +1,24 @@
 "use strict";
 
-var arr = [1, 3, 4, 5, 8];
-var newArr2 = arr.map(function (item) {
-  return item * 2;
-});
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
-console.log(newArr);
-
-var teste = function teste() {
-  return {
-    nome: "Diego"
-  };
+var usuario = {
+  nome: "Ricardo",
+  idade: 19,
+  endereco: {
+    cidade: "Blumenau",
+    estado: "SC"
+  }
 };
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
 
-console.log(teste());
+function mostraNome(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  console.log(nome, idade);
+}
+
+mostraNome(usuario);
