@@ -1,24 +1,45 @@
+// REST
+
 const usuario = {
   nome: "Ricardo",
   idade: 19,
-  endereco: {
-    cidade: "Blumenau",
-    estado: "SC"
-  }
+  empresa: "Alternative Agência"
 };
 
-const {
-  nome,
-  idade,
-  endereco: { cidade }
-} = usuario;
+const { nome, ...resto } = usuario;
 
-console.log(nome);
-console.log(idade);
-console.log(cidade);
+console.log("Nome: " + nome);
+console.log("Resto: " + resto);
 
-function mostraNome({ nome, idade }) {
-  console.log(nome, idade);
+const arr = [1, 2, 3, 4];
+
+const [a, b, ...c] = arr;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+function soma(...params) {
+  return params.reduce((total, next) => total + next);
 }
 
-mostraNome(usuario);
+console.log(soma(1, 3, 4));
+
+//SPREAD
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const arr3 = [...arr1, ...arr2];
+
+console.log(arr3);
+
+const usuario1 = {
+  nome: "Diego",
+  idade: 19,
+  empresa: "Alternative Agência"
+};
+
+const usuario2 = { ...usuario1, nome: "Ricardo" };
+
+console.log(usuario2);
