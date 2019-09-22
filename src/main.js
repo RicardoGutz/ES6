@@ -274,7 +274,9 @@ const usuario = "Ricardo";
 
 const idade = 19;
 
-console.log(`O usuário ${usuario} possui ${idade} anos de idade.`);*/
+console.log(`O usuário ${usuario} possui ${idade} anos de idade.`);
+
+//Exercício 7
 
 const nome = "Ricardo";
 
@@ -287,3 +289,34 @@ const usuario = {
 };
 
 console.log(usuario);
+
+//WebPack Challenges
+
+import Usuario from "./functions";
+
+import { info } from "./functions";
+
+import idade from "./functions";
+
+console.log(Usuario);
+
+console.log(info());
+
+console.log(idade);*/
+
+//Async & Await Challenges
+
+const delay = () =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Mais 1 segundo");
+    }, 1000);
+  });
+
+async function umPorSegundo() {
+  console.log(await delay());
+  console.log(await delay());
+  console.log(await delay());
+}
+
+umPorSegundo();
